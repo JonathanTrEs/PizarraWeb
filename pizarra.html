@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="img/ico.png"/>
+    <title>PincelD</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.esedeerre.com/js/modernizr-1.7.min.js"></script>
+    <script type="text/javascript" src="js/pizarra.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <script type="text/JavaScript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript"> 
+      var pageTracker = _gat._getTracker("UA-3219631-1"); pageTracker._initData(); pageTracker._trackPageview();
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+		<img src="img/ico.png" width=70 height=50 border=0>
+      </div>
+	  <div>
+		<a class="navbar-brand" href="#">PincelD</a>
+	  </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" id="dColores" class="dropdown-toggle" data-toggle="dropdown">Colores <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="javascript:setColor('#FF0000')">Rojo</a></li>
+              <li><a href="javascript:setColor('#0000FF')">Azul</a></li>
+              <li><a href="javascript:setColor('#FFFF00')">Amarillo</a></li>
+              <li><a href="javascript:setColor('#FF8000')">Naranja</a></li>
+              <li><a href="javascript:setColor('#04B404')">Verde</a></li>
+              <li><a href="javascript:setColor('#424242')">Gris</a></li>
+              <li><a href="javascript:setColor('#000000')">Negro</a></li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pincel <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+	            <li><a href="javascript:setLine('1')">Fino</a></li>
+              <li><a href="javascript:setLine('4')">Normal</a></li>
+              <li><a href="javascript:setLine('8')">Grueso</a></li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li><div id="pincel"></div></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formas <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+				      <li><a href="javascript:setTipo('0')">Linea</a></li>
+              <li><a href="javascript:setTipo('1')">Cuadrado</a></li>
+              <li><a href="javascript:setTipo('2')">Circulo</a></li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li><div id="figura"></div></li>
+          <li><a href="javascript:setColor('#FFFFFF')" ><img src="img/goma.ico" width=30 height=20 border=0>Goma</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="contenedor" align=center>
+	     <div id="no_html5">
+	       <img src="http://www.esedeerre.com/img/no_html5.png" alt="Tu navegador no soporta HTML5" title="HTML5 support"/>
+	     </div>
+	     <div id="contenedor_pizarra">
+	       <canvas id="pizarra" width="800px" height="300px" style="border:2px solid #A4A4A4; cursor:crosshair;"></canvas><br/>
+	         <a href="javascript:borrar()" id="borrar_bt" type="button" class="btn btn-default">Limpiar</a>
+	     </div>
+    </div>
+    <script type="text/javascript">
+      init();
+    </script>
+	<div>
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+		  <div class="container">
+			<p id="cX" class="navbar-text"></p>
+      <div class="navbar-text" id="pX"></div>
+      <div class="navbar-text" id="pY"></div>
+      <div class="navbar-text">Pixeles</div>
+		  </div>
+		</nav>
+	</div>
+  </body>
+</html>
